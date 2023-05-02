@@ -28,7 +28,7 @@ var (
 	Continue = 1
 )
 
-func readMatrix(scanner *bufio.Scanner) map[string]map[string]int {
+func ReadMatrix(scanner *bufio.Scanner) map[string]map[string]int {
 	var matrix = make(map[string]map[string]int)
 	var line string
 	scanner.Scan()
@@ -61,7 +61,7 @@ func readMatrix(scanner *bufio.Scanner) map[string]map[string]int {
 func main() {
 	costFile, _ := os.Open("4/cost_matrix.txt")
 	costReader := bufio.NewScanner(costFile)
-	var costMatrix = readMatrix(costReader)
+	var costMatrix = ReadMatrix(costReader)
 
 	fileIn, _ := os.Open("4/input.txt")
 	in := bufio.NewReader(fileIn)
